@@ -87,13 +87,13 @@ class PactPlugin extends PactPluginBase {
                     providerToVerify = provider
 
                     taskContainer.addAll(project.tasks)
-                    List<URL> classPathUrl = []
+                    List<URI> classPathUri = []
                     try {
-                        classPathUrl = project.sourceSets.test.runtimeClasspath*.toURL()
+                        classPathUri = project.sourceSets.test.runtimeClasspath*.toURI()
                     } catch (MissingPropertyException ignored) {
                         // do nothing, the list will be empty
                     }
-                    testClasspathURL.set(classPathUrl)
+                    testClasspathURL.set(classPathUri)
                     projectVersion.set(project.version)
                     report.set(extension.reports)
                     buildDir.set(project.buildDir)

@@ -29,7 +29,7 @@ abstract class PactVerificationTask extends PactVerificationBaseTask {
 
   @Input
   @Optional
-  abstract ListProperty<URL> getTestClasspathURL()
+  abstract ListProperty<URI> getTestClasspathURL()
 
   @Input
   abstract SetProperty<Task> getTaskContainer()
